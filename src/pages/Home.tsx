@@ -26,7 +26,7 @@ export const Home = () => {
   console.log(countryData);
 
   return (
-    <div>
+    <div className="bg-[#fbfbfb]">
       <CountriesList countryData={countryData} />
     </div>
   );
