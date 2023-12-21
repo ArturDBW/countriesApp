@@ -22,6 +22,7 @@ export const SingleCountryItem = ({ country }: CountryDataProps) => {
   const { flags, name, population, region, capital } = country;
 
   return (
+    // <Link to={`/${name.common}`}>
     <div className="bg-white shadow-md">
       <div className="">
         <img
@@ -48,5 +49,6 @@ export const SingleCountryItem = ({ country }: CountryDataProps) => {
         </ul>
       </div>
     </div>
+    // </Link>
   );
 };

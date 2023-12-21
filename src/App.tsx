@@ -1,3 +1,4 @@
+import { DetailsCountry } from "./pages/DetailsCountry";
 import { Home } from "./pages/Home";
 import { AppLayout } from "./ui/AppLayout";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -9,6 +10,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/:id",
+        element: <DetailsCountry />,
       },
     ],
   },
