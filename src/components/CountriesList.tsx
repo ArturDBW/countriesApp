@@ -1,4 +1,5 @@
 import { SingleCountryItem } from "./SingleCountryItem";
+import { Link } from "react-router-dom";
 
 type CountryDataProps = {
   name: {
@@ -24,7 +25,9 @@ export const CountriesList = ({ countryData }: CountriesListProps) => {
         {countryData !== null ? (
           <div className="grid grid-cols-4 gap-10">
             {countryData.map((country, index: number) => (
-              <SingleCountryItem key={index} country={country} />
+              <Link to={`/${country.name.common}`} key={index}>
+                <SingleCountryItem country={country} />
+              </Link>
             ))}
           </div>
         ) : (
