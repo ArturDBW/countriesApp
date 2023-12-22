@@ -25,7 +25,7 @@ export const CountriesList = ({ countryData }: CountriesListProps) => {
         {countryData !== null ? (
           <div className="grid grid-cols-4 gap-10">
             {countryData.map((country, index: number) => (
-              <Link to={`/${country.population}`} key={index}>
+              <Link to={`/${country.name.common}`} key={index}>
                 <SingleCountryItem country={country} />
               </Link>
             ))}
