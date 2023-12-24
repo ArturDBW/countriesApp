@@ -10,7 +10,8 @@ export const DetailsCountry = () => {
   >(null);
 
   useEffect(() => {
-    const API_URL_ALL: string = `https://restcountries.com/v3.1/name/${id}`;
+    const API_URL_ALL: string = `https://restcountries.com/v3.1/alpha?codes=${id}`;
+    // const API_URL_ALL: string = `https://restcountries.com/v3.1/name/${id}`;
 
     fetch(API_URL_ALL)
       .then((res) => res.json())
@@ -62,7 +63,7 @@ export const DetailsCountry = () => {
                 <ul className="space-y-1">
                   <li>
                     <span className={spanStyled}>Capital:&nbsp;</span>
-                    {country.capital}
+                    {country.capital[0]}
                   </li>
                   <li>
                     <span className={spanStyled}>Top Level Domain:&nbsp;</span>
