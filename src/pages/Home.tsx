@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { CountriesList } from "../components/CountriesList";
+import { SearchBar } from "../components/SearchBar";
 
 type countryDataProps = {
   name: {
@@ -34,6 +35,7 @@ export const Home = () => {
 
   return (
     <div className="bg-[#fbfbfb]">
+      <SearchBar />
       <CountriesList countryData={countryData} />
     </div>
   );
