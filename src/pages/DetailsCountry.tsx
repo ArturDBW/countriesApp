@@ -86,7 +86,7 @@ export const DetailsCountry = () => {
                   )}
                   {country.borders?.map((neighbours, index: number) => (
                     <Link
-                      to={neighbours}
+                      to={`/${neighbours}`}
                       key={index}
                       className="mx-2 border px-6 py-1"
                     >
