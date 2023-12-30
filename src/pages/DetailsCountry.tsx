@@ -52,24 +52,29 @@ export const DetailsCountry = () => {
   console.log(id);
 
   return (
-    <div className="p-5">
-      <div className="mx-auto max-w-screen-2xl p-5">
-        <button onClick={() => navigate(-1)}>&larr; Back</button>
+    <div>
+      <div className="mx-auto max-w-screen-2xl p-5 max-sm:p-3">
+        <button
+          onClick={() => navigate(-1)}
+          className="rounded-md border px-6 py-1 shadow-sm transition-all hover:shadow-lg"
+        >
+          &larr; Back
+        </button>
         {countryDetails !== null ? (
           countryDetails.map((country, index) => (
-            <div key={index} className="mt-10 flex items-center">
-              <div className="flex w-1/2">
+            <div key={index} className="mt-10 flex max-lg:flex-col">
+              <div className="flex w-1/2 max-lg:w-full">
                 <img
                   src={country.flags.png}
                   alt={country.flags.png}
-                  className="w-2/3"
+                  className="aspect-[160/98] w-3/4 max-lg:w-full"
                 />
               </div>
-              <div className="grid w-1/2 grid-cols-2 grid-rows-3">
-                <h2 className="col-span-full text-2xl font-bold">
+              <div className="grid w-1/2 grid-cols-2 grid-rows-3 max-lg:w-full">
+                <h2 className="col-span-full text-2xl font-bold max-lg:mt-5">
                   {country.name.common}
                 </h2>
-                <ul className="space-y-1">
+                <ul className="space-y-1 max-md:col-span-full max-md:mt-[-20px]">
                   <li>
                     <span className={spanStyled}>Native Name:&nbsp;</span>
                     {country.name.official}
@@ -87,9 +92,9 @@ export const DetailsCountry = () => {
                     {country.subregion}
                   </li>
                 </ul>
-                <ul className="space-y-1">
+                <ul className="space-y-1 max-md:col-span-full max-sm:mb-6">
                   <li>
-                    <span className={spanStyled}>Capital:&nbsp;</span>
+                    <span className={`${spanStyled}`}>Capital:&nbsp;</span>
                     {country.capital[0]}
                   </li>
                   <li>
@@ -107,7 +112,7 @@ export const DetailsCountry = () => {
                     {Object.values(country.languages).join(", ")}
                   </li>
                 </ul>
-                <div className="col-span-full self-end">
+                <div className="col-span-full flex flex-wrap items-center space-x-2 space-y-1 self-end">
                   {country.borders && (
                     <span className={spanStyled}>Border Countries:&nbsp;</span>
                   )}
@@ -115,7 +120,7 @@ export const DetailsCountry = () => {
                     <Link
                       to={`/${neighbours}`}
                       key={index}
-                      className="mx-2 border px-6 py-1"
+                      className="border px-6 py-1"
                     >
                       {neighbours}
                     </Link>

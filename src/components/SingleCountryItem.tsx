@@ -22,7 +22,6 @@ export const SingleCountryItem = ({ country }: CountryDataProps) => {
   const { flags, name, population, region, capital } = country;
 
   return (
-    // <Link to={`/${name.common}`}>
     <div className="bg-white shadow-md">
       <div className="">
         <img
@@ -31,8 +30,8 @@ export const SingleCountryItem = ({ country }: CountryDataProps) => {
           className="aspect-[160/98] w-full"
         />
       </div>
-      <div className="p-4">
-        <h2 className="mb-4 text-lg font-bold">{name.common}</h2>
+      <div className="grid p-4">
+        <h2 className="mb-4 h-10 text-lg font-bold">{name.common}</h2>
         <ul className="mb-8 space-y-1 text-sm">
           <li>
             <span className={spanStyled}>Population:</span>
@@ -49,6 +48,5 @@ export const SingleCountryItem = ({ country }: CountryDataProps) => {
         </ul>
       </div>
     </div>
-    // </Link>
   );
 };
