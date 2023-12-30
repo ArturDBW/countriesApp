@@ -20,22 +20,35 @@ export const Home = () => {
     null,
   );
 
+  const [inputValue, setInputValue] = useState("");
+  console.log(inputValue);
+
   useEffect(() => {
     const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
+    const API_URL_NAME: string = `https://restcountries.com/v3.1/name/${inputValue}`;
 
-    fetch(API_URL_ALL)
-      .then((res) => res.json())
-      .then((res) => setCountryData(res))
-      .catch((error) => {
-        console.error("Error during API request", error);
-      });
-  }, []);
+    if (inputValue === "") {
+      fetch(API_URL_ALL)
+        .then((res) => res.json())
+        .then((res) => setCountryData(res))
+        .catch((error) => {
+          console.error("Error during API request", error);
+        });
+    } else {
+      fetch(API_URL_NAME)
+        .then((res) => res.json())
+        .then((res) => setCountryData(res))
+        .catch((error) => {
+          console.error("Error during API request", error);
+        });
+    }
+  }, [inputValue]);
 
   console.log(countryData);
 
   return (
     <div className="bg-[#fbfbfb]">
-      <SearchBar />
+      <SearchBar inputValue={inputValue} setInputValue={setInputValue} />
       <CountriesList countryData={countryData} />
     </div>
   );
