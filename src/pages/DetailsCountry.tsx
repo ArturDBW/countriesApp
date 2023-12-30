@@ -82,7 +82,7 @@ export const DetailsCountry = () => {
                 </ul>
                 <div className="col-span-full self-end">
                   <span className={spanStyled}>Border Countries:&nbsp;</span>
-                  {country.borders.map((neighbours, index: number) => (
+                  {country.borders?.map((neighbours, index: number) => (
                     <Link
                       to={neighbours}
                       key={index}
