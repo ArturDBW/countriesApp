@@ -11,6 +11,7 @@ type CountryDataProps = {
   population: number;
   region: string;
   capital: string;
+  cca3: string;
 };
 
 type CountriesListProps = {
@@ -25,7 +26,7 @@ export const CountriesList = ({ countryData }: CountriesListProps) => {
         {countryData !== null ? (
           <div className="grid grid-cols-4 gap-10">
             {countryData.map((country, index: number) => (
-              <Link to={`/${country.cioc}`} key={index}>
+              <Link to={`/${country.cca3}`} key={index}>
                 <SingleCountryItem country={country} />
               </Link>
             ))}

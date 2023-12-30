@@ -1,17 +1,42 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+type CountryDataProps = {
+  name: {
+    common: string;
+    official: string;
+  };
+  flags: {
+    png: string;
+  };
+  population: number;
+  region: string;
+  subregion: string;
+  tld: string[];
+  capital: string;
+  cca3: string;
+  currencies: {
+    [key: string]: Currency;
+  };
+  borders: string[];
+  languages: string[];
+};
+
+interface Currency {
+  name: string;
+  symbol: string;
+}
 
 export const DetailsCountry = () => {
   const spanStyled = "font-bold";
   const { id } = useParams();
 
   const [countryDetails, setCountryDetails] = useState<
-    CountriesListProps[] | null
+    CountryDataProps[] | null
   >(null);
 
   useEffect(() => {
     const API_URL_ALL: string = `https://restcountries.com/v3.1/alpha?codes=${id}`;
-    // const API_URL_ALL: string = `https://restcountries.com/v3.1/name/${id}`;
 
     fetch(API_URL_ALL)
       .then((res) => res.json())
@@ -21,13 +46,15 @@ export const DetailsCountry = () => {
       });
   }, [id]);
 
+  const navigate = useNavigate();
+
   console.log(countryDetails);
   console.log(id);
 
   return (
     <div className="p-5">
       <div className="mx-auto max-w-screen-2xl p-5">
-        <Link to={""}>&larr; Back</Link>
+        <button onClick={() => navigate(-1)}>&larr; Back</button>
         {countryDetails !== null ? (
           countryDetails.map((country, index) => (
             <div key={index} className="mt-10 flex items-center">
@@ -81,10 +108,12 @@ export const DetailsCountry = () => {
                   </li>
                 </ul>
                 <div className="col-span-full self-end">
-                  <span className={spanStyled}>Border Countries:&nbsp;</span>
+                  {country.borders && (
+                    <span className={spanStyled}>Border Countries:&nbsp;</span>
+                  )}
                   {country.borders?.map((neighbours, index: number) => (
                     <Link
-                      to={neighbours}
+                      to={`/${neighbours}`}
                       key={index}
                       className="mx-2 border px-6 py-1"
                     >
