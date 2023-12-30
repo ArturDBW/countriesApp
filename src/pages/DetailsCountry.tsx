@@ -57,12 +57,12 @@ export const DetailsCountry = () => {
         <button onClick={() => navigate(-1)}>&larr; Back</button>
         {countryDetails !== null ? (
           countryDetails.map((country, index) => (
-            <div key={index} className="mt-10 flex items-center">
+            <div key={index} className="mt-10 flex">
               <div className="flex w-1/2">
                 <img
                   src={country.flags.png}
                   alt={country.flags.png}
-                  className="w-2/3"
+                  className="aspect-[160/98] w-3/4"
                 />
               </div>
               <div className="grid w-1/2 grid-cols-2 grid-rows-3">
@@ -107,7 +107,7 @@ export const DetailsCountry = () => {
                     {Object.values(country.languages).join(", ")}
                   </li>
                 </ul>
-                <div className="col-span-full self-end">
+                <div className="col-span-full flex flex-wrap items-center space-x-2 space-y-1 self-end">
                   {country.borders && (
                     <span className={spanStyled}>Border Countries:&nbsp;</span>
                   )}
@@ -115,7 +115,7 @@ export const DetailsCountry = () => {
                     <Link
                       to={`/${neighbours}`}
                       key={index}
-                      className="mx-2 border px-6 py-1"
+                      className="border px-6 py-1"
                     >
                       {neighbours}
                     </Link>
