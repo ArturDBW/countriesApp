@@ -1,17 +1,42 @@
 import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+type CountryDataProps = {
+  name: {
+    common: string;
+    official: string;
+  };
+  flags: {
+    png: string;
+  };
+  population: number;
+  region: string;
+  subregion: string;
+  tld: string[];
+  capital: string;
+  cca3: string;
+  currencies: {
+    [key: string]: Currency;
+  };
+  borders: string[];
+  languages: string[];
+};
+
+interface Currency {
+  name: string;
+  symbol: string;
+}
+
 export const DetailsCountry = () => {
   const spanStyled = "font-bold";
   const { id } = useParams();
 
   const [countryDetails, setCountryDetails] = useState<
-    CountriesListProps[] | null
+    CountryDataProps[] | null
   >(null);
 
   useEffect(() => {
     const API_URL_ALL: string = `https://restcountries.com/v3.1/alpha?codes=${id}`;
-    // const API_URL_ALL: string = `https://restcountries.com/v3.1/name/${id}`;
 
     fetch(API_URL_ALL)
       .then((res) => res.json())

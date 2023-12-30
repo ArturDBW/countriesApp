@@ -11,6 +11,7 @@ type CountryDataProps = {
   population: number;
   region: string;
   capital: string;
+  cca3: string;
 };
 
 type CountriesListProps = {
