@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 type CountryDataProps = {
@@ -46,13 +46,15 @@ export const DetailsCountry = () => {
       });
   }, [id]);
 
+  const navigate = useNavigate();
+
   console.log(countryDetails);
   console.log(id);
 
   return (
     <div className="p-5">
       <div className="mx-auto max-w-screen-2xl p-5">
-        <Link to={""}>&larr; Back</Link>
+        <button onClick={() => navigate(-1)}>&larr; Back</button>
         {countryDetails !== null ? (
           countryDetails.map((country, index) => (
             <div key={index} className="mt-10 flex items-center">
