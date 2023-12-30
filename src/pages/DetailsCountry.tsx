@@ -94,7 +94,7 @@ export const DetailsCountry = () => {
                 </ul>
                 <ul className="space-y-1">
                   <li>
-                    <span className={spanStyled}>Capital:&nbsp;</span>
+                    <span className={`${spanStyled}`}>Capital:&nbsp;</span>
                     {country.capital[0]}
                   </li>
                   <li>
