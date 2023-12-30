@@ -54,7 +54,12 @@ export const DetailsCountry = () => {
   return (
     <div className="p-5">
       <div className="mx-auto max-w-screen-2xl p-5">
-        <button onClick={() => navigate(-1)}>&larr; Back</button>
+        <button
+          onClick={() => navigate(-1)}
+          className="rounded-md border px-6 py-1 shadow-sm transition-all hover:shadow-lg"
+        >
+          &larr; Back
+        </button>
         {countryDetails !== null ? (
           countryDetails.map((country, index) => (
             <div key={index} className="mt-10 flex">
