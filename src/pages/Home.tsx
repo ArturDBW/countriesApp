@@ -33,7 +33,7 @@ export const Home = () => {
         .then((res) => res.json())
         // .then((res) => setCountryData(res))
         .then((res) => {
-          const filteredCountries = res.filter((country) => {
+          const filteredCountries = res.filter((country: countryDataProps) => {
             return filterValue === "" || country.region === filterValue;
           });
           setCountryData(filteredCountries);
@@ -46,7 +46,7 @@ export const Home = () => {
         .then((res) => res.json())
         // .then((res) => setCountryData(res))
         .then((res) => {
-          const filteredCountries = res.filter((country) => {
+          const filteredCountries = res.filter((country: countryDataProps) => {
             return filterValue === "" || country.region === filterValue;
           });
           setCountryData(filteredCountries);
