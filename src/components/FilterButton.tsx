@@ -14,17 +14,19 @@ export const FilterButton = ({
   console.log(filterValue);
 
   return (
-    <select
-      value={filterValue}
-      onChange={handleFilterChange}
-      className="rounded-md px-4 py-2 shadow-md outline-none"
-    >
-      <option value="">Filter by Region</option>
-      <option value="Africa">Africa</option>
-      <option value="Americas">America</option>
-      <option value="Asia">Asia</option>
-      <option value="Europe">Europe</option>
-      <option value="Oceania">Oceania</option>
-    </select>
+    <div>
+      <select
+        value={filterValue}
+        onChange={handleFilterChange}
+        className="rounded-md px-4 py-2 shadow-md outline-none"
+      >
+        <option value="">Filter by Region</option>
+        <option value="Africa">Africa</option>
+        <option value="Americas">America</option>
+        <option value="Asia">Asia</option>
+        <option value="Europe">Europe</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+    </div>
   );
 };

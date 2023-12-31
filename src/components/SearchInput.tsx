@@ -12,7 +12,7 @@ export const SearchInput = ({ inputValue, setInputValue }: InputValueProps) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <input
         type="text"
         placeholder="Search for a country..."

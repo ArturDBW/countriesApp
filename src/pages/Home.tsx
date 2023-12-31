@@ -31,7 +31,6 @@ export const Home = () => {
     if (inputValue === "") {
       fetch(API_URL_ALL)
         .then((res) => res.json())
-        // .then((res) => setCountryData(res))
         .then((res) => {
           const filteredCountries = res.filter((country: countryDataProps) => {
             return filterValue === "" || country.region === filterValue;
@@ -44,7 +43,6 @@ export const Home = () => {
     } else {
       fetch(API_URL_NAME)
         .then((res) => res.json())
-        // .then((res) => setCountryData(res))
         .then((res) => {
           const filteredCountries = res.filter((country: countryDataProps) => {
             return filterValue === "" || country.region === filterValue;
