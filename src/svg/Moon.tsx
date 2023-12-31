@@ -1,7 +1,7 @@
 export const Moon = () => {
   return (
     <svg
-      className="mr-1 h-4 w-4 text-gray-800 dark:text-white"
+      className="mr-1 h-3 w-3 text-gray-800 dark:text-white"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

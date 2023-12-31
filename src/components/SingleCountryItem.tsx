@@ -22,7 +22,7 @@ export const SingleCountryItem = ({ country }: CountryDataProps) => {
   const { flags, name, population, region, capital } = country;
 
   return (
-    <div className="bg-white shadow-md">
+    <div className="dark:bg-darkBlue shadow-md">
       <div className="">
         <img
           src={flags.png}

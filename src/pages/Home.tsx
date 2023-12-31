@@ -58,7 +58,7 @@ export const Home = () => {
   console.log(countryData);
 
   return (
-    <div className="bg-[#fbfbfb]">
+    <div className="dark:bg-veryDarkBlue bg-[#fbfbfb] dark:text-white">
       <SearchBar
         inputValue={inputValue}
         setInputValue={setInputValue}

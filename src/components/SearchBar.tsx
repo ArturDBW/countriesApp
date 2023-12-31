@@ -15,9 +15,14 @@ export const SearchBar = ({
   setFilterValue,
 }: InputValueProps) => {
   return (
-    <div className="mx-auto flex max-w-screen-2xl items-center justify-between p-5 max-sm:flex-col max-sm:items-start max-sm:space-y-6 max-sm:p-3">
-      <SearchInput inputValue={inputValue} setInputValue={setInputValue} />
-      <FilterButton filterValue={filterValue} setFilterValue={setFilterValue} />
+    <div>
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between p-5 max-sm:flex-col max-sm:items-start max-sm:space-y-6 max-sm:p-3">
+        <SearchInput inputValue={inputValue} setInputValue={setInputValue} />
+        <FilterButton
+          filterValue={filterValue}
+          setFilterValue={setFilterValue}
+        />
+      </div>
     </div>
   );
 };

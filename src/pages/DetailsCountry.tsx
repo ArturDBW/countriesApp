@@ -52,11 +52,11 @@ export const DetailsCountry = () => {
   console.log(id);
 
   return (
-    <div>
+    <div className="dark:bg-veryDarkBlue min-h-[calc(100vh-72px)] bg-[#fbfbfb] dark:text-white">
       <div className="mx-auto max-w-screen-2xl p-5 max-sm:p-3">
         <button
           onClick={() => navigate(-1)}
-          className="rounded-md border px-6 py-1 shadow-sm transition-all hover:shadow-lg"
+          className="dark:bg-darkBlue rounded-md border px-6 py-1 shadow-md transition-all hover:shadow-lg dark:border-[#1f2031]"
         >
           &larr; Back
         </button>
@@ -120,7 +120,7 @@ export const DetailsCountry = () => {
                     <Link
                       to={`/${neighbours}`}
                       key={index}
-                      className="border px-6 py-1"
+                      className="dark:bg-darkBlue border px-6 py-1 dark:border-[#1f2031]"
                     >
                       {neighbours}
                     </Link>

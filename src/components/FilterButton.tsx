@@ -18,7 +18,7 @@ export const FilterButton = ({
       <select
         value={filterValue}
         onChange={handleFilterChange}
-        className="rounded-md px-4 py-2 shadow-md outline-none"
+        className="dark:bg-darkBlue rounded-md px-4 py-2 shadow-md outline-none"
       >
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>

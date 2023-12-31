@@ -27,7 +27,7 @@ export const Header = () => {
   console.log(theme);
 
   return (
-    <header className="border-b">
+    <header className="dark:bg-darkBlue dark:text-white">
       <div className="mx-auto flex max-w-screen-2xl justify-between p-5 max-sm:p-3">
         <Link to={"/"}>
           <h1 className="text-2xl font-bold max-sm:text-xl">
