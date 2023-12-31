@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Moon } from "../svg/Moon";
+import { FillMoon } from "../svg/FillMoon";
 
 type Theme = "light" | "dark";
 
@@ -22,6 +24,8 @@ export const Header = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  console.log(theme);
+
   return (
     <header className="border-b">
       <div className="mx-auto flex max-w-screen-2xl justify-between p-5 max-sm:p-3">
@@ -30,7 +34,10 @@ export const Header = () => {
             Where in the world?
           </h1>
         </Link>
-        <button onClick={handleThemeSwitch}>Dark Mode</button>
+        <button onClick={handleThemeSwitch} className="flex items-center">
+          {theme === "dark" ? <FillMoon /> : <Moon />}
+          Dark Mode
+        </button>
       </div>
     </header>
   );
