@@ -24,8 +24,6 @@ export const Header = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  console.log(theme);
-
   return (
     <header className="dark:bg-darkBlue dark:text-white">
       <div className="mx-auto flex max-w-screen-2xl justify-between p-5 max-sm:p-3">

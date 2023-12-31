@@ -11,14 +11,12 @@ export const FilterButton = ({
     setFilterValue(e.target.value);
   };
 
-  console.log(filterValue);
-
   return (
     <div>
       <select
         value={filterValue}
         onChange={handleFilterChange}
-        className="dark:bg-darkBlue rounded-md px-4 py-2 shadow-md outline-none"
+        className="rounded-md px-4 py-2 shadow-md outline-none dark:bg-darkBlue"
       >
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>

@@ -22,7 +22,6 @@ export const Home = () => {
 
   const [inputValue, setInputValue] = useState("");
   const [filterValue, setFilterValue] = useState("");
-  console.log(inputValue);
 
   useEffect(() => {
     const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
@@ -55,10 +54,8 @@ export const Home = () => {
     }
   }, [inputValue, filterValue]);
 
-  console.log(countryData);
-
   return (
-    <div className="dark:bg-veryDarkBlue bg-[#fbfbfb] dark:text-white">
+    <div className="bg-[#fbfbfb] dark:bg-veryDarkBlue dark:text-white">
       <SearchBar
         inputValue={inputValue}
         setInputValue={setInputValue}
