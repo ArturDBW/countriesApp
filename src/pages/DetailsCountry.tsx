@@ -48,15 +48,12 @@ export const DetailsCountry = () => {
 
   const navigate = useNavigate();
 
-  console.log(countryDetails);
-  console.log(id);
-
   return (
-    <div>
+    <div className="min-h-[calc(100vh-72px)] bg-[#fbfbfb] dark:bg-veryDarkBlue dark:text-white">
       <div className="mx-auto max-w-screen-2xl p-5 max-sm:p-3">
         <button
           onClick={() => navigate(-1)}
-          className="rounded-md border px-6 py-1 shadow-sm transition-all hover:shadow-lg"
+          className="rounded-md border px-6 py-1 shadow-md transition-all hover:shadow-lg dark:border-[#1f2031] dark:bg-darkBlue"
         >
           &larr; Back
         </button>
@@ -120,7 +117,7 @@ export const DetailsCountry = () => {
                     <Link
                       to={`/${neighbours}`}
                       key={index}
-                      className="border px-6 py-1"
+                      className="border px-6 py-1 dark:border-[#1f2031] dark:bg-darkBlue"
                     >
                       {neighbours}
                     </Link>
