@@ -21,6 +21,7 @@ export const Home = () => {
   );
 
   const [inputValue, setInputValue] = useState("");
+  const [filterValue, setFilterValue] = useState("");
   console.log(inputValue);
 
   useEffect(() => {
@@ -30,25 +31,42 @@ export const Home = () => {
     if (inputValue === "") {
       fetch(API_URL_ALL)
         .then((res) => res.json())
-        .then((res) => setCountryData(res))
+        // .then((res) => setCountryData(res))
+        .then((res) => {
+          const filteredCountries = res.filter((country) => {
+            return filterValue === "" || country.region === filterValue;
+          });
+          setCountryData(filteredCountries);
+        })
         .catch((error) => {
           console.error("Error during API request", error);
         });
     } else {
       fetch(API_URL_NAME)
         .then((res) => res.json())
-        .then((res) => setCountryData(res))
+        // .then((res) => setCountryData(res))
+        .then((res) => {
+          const filteredCountries = res.filter((country) => {
+            return filterValue === "" || country.region === filterValue;
+          });
+          setCountryData(filteredCountries);
+        })
         .catch((error) => {
           console.error("Error during API request", error);
         });
     }
-  }, [inputValue]);
+  }, [inputValue, filterValue]);
 
   console.log(countryData);
 
   return (
     <div className="bg-[#fbfbfb]">
-      <SearchBar inputValue={inputValue} setInputValue={setInputValue} />
+      <SearchBar
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+      />
       <CountriesList countryData={countryData} />
     </div>
   );
