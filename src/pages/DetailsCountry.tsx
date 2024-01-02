@@ -53,7 +53,7 @@ export const DetailsCountry = () => {
       <div className="mx-auto max-w-screen-2xl p-5 max-sm:p-3">
         <button
           onClick={() => navigate(-1)}
-          className="rounded-md border px-6 py-1 shadow-md transition-all hover:shadow-lg dark:border-[#1f2031] dark:bg-darkBlue"
+          className="flex items-center rounded-md border px-6 py-1 shadow-md transition-all hover:shadow-lg dark:border-[#1f2031] dark:bg-darkBlue"
         >
           &larr; Back
         </button>

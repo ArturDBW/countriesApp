@@ -55,7 +55,7 @@ export const Home = () => {
   }, [inputValue, filterValue]);
 
   return (
-    <div className="min-h-[calc(100vh-72px)] bg-[#fbfbfb] dark:bg-veryDarkBlue dark:text-white">
+    <div className="min-h-screen bg-[#fbfbfb] dark:bg-veryDarkBlue dark:text-white">
       <SearchBar
         inputValue={inputValue}
         setInputValue={setInputValue}
