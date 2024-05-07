@@ -2,7 +2,7 @@
 
 ## Description
 
-Web application with countries information from API.
+Web application with countries information from API
 
 ## Technologies
 - React
